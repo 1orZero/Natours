@@ -77,6 +77,18 @@ body {
 	animation: moveInRight 0.5s ease-out;
 }
 
+
+@keyframes moveInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
 @keyframes moveInLeft {
 	0% {
 		opacity: 0;
@@ -118,6 +130,7 @@ body {
 	transition: all 0.2s;
 	box-shadow:0 2px 5px rgb(0, 0, 0,.2);
 	position: relative;
+
 }
 
 .btn:hover{
@@ -145,7 +158,7 @@ body {
 	top:  0;
 	left:  0;
 	z-index: -1;
-	transition: all .4s;
+	transition: all .5s;
 }
 
 .btn-white::after {
@@ -156,4 +169,12 @@ body {
 .btn:hover::after{
 	transform: scaleX(1.4) scaleY(1.6);
 	opacity: 0;
+}
+
+.btn-animation {
+	animation:moveInBottom .5s ease-out;
+	animation-delay: .75s;
+
+	/* Other Animation won't start until this start */
+	animation-fill-mode: backwards; 
 }
