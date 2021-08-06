@@ -453,6 +453,159 @@ body {
 .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
   opacity: 1; }
 
+.navigation__checkbox {
+  display: none; }
+
+.navigation__button {
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  height: 7.5rem;
+  width: 7.5rem;
+  background-color: #FFF;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  text-align: center; }
+  .navigation__button:active {
+    transform: translateY(0.3rem); }
+
+.navigation__background {
+  position: fixed;
+  top: 6.7rem;
+  right: 6.7rem;
+  height: 6rem;
+  width: 6rem;
+  background-image: radial-gradient(#7ed56f, #28b485);
+  border-radius: 50%;
+  z-index: 1000;
+  transition: transform .8s; }
+
+.navigation__nav {
+  position: fixed;
+  z-index: 1500;
+  height: 100vh;
+  opacity: 0;
+  width: 0;
+  transition: all 0.5s cubic-bezier(0.84, -0.16, 0.4, 1.38); }
+
+.navigation__list {
+  list-style: none; }
+  .navigation__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.navigation__item {
+  text-align: center;
+  transition: all .2s; }
+  .navigation__item:hover {
+    transform: translateX(1rem); }
+
+.navigation__link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: #FFF;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #FFF 50%);
+  background-size: 230%;
+  transition: all .5s; }
+  .navigation__link span {
+    padding-right: 1rem; }
+  .navigation__link:hover, .navigation__link:active {
+    color: #55c57a;
+    background-position-x: 100%; }
+
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(130); }
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%; }
+
+.navigation__icon {
+  position: relative;
+  margin-top: 3.6rem; }
+  .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+    display: inline-block;
+    width: 4rem;
+    height: 2px;
+    background-color: #333;
+    transition: top .2s; }
+  .navigation__icon::before, .navigation__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all .2s; }
+  .navigation__icon::before {
+    top: -1rem; }
+  .navigation__icon::after {
+    top: 1rem; }
+
+.navigation__button:hover .navigation__icon::before {
+  top: -1.2rem; }
+
+.navigation__button:hover .navigation__icon::after {
+  top: 1.2rem; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background: transparent; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(135deg); }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-135deg); }
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 3000; }
+  .popup__content {
+    width: 75%;
+    background-color: white;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    display: table; }
+    .popup__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+  .popup__left {
+    width: 33.33333333%;
+    display: table-cell;
+    vertical-align: middle; }
+  .popup__right {
+    width: 66.66666666%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5rem; }
+  .popup__img {
+    display: block;
+    width: 100%; }
+  .popup__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid #eee;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto; }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
