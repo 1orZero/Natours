@@ -16,6 +16,9 @@
         transition: all .2s;
         display: block;
 
+        @include respond(tab-land) {
+            width: 60%;
+        }
         @include respond(tab-port) {
             width: 100%;
         }
