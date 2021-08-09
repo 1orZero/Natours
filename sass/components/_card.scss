@@ -21,6 +21,7 @@
         overflow: hidden;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
+
         &--front {
             background-color: $color-white;
         }
@@ -31,12 +32,15 @@
             &-1 {
                 background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
             }
+
             &-2 {
                 background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
             }
+
             &-3 {
                 background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
             }
+
         }
     }
 
@@ -50,9 +54,11 @@
         &--1 {
             background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
         }
+
         &--2 {
             background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/nat-6.jpg);
         }
+
         &--3 {
             background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/nat-7.jpg);
         }
@@ -79,11 +85,13 @@
                 rgba($color-secondary-light, .85),
                 rgba($color-secondary-dark, .85));
         }
+
         &--2 {
             background-image: linear-gradient(to right,
                 rgba($color-primary-light, .85),
                 rgba($color-primary-dark, .85));
         }
+
         &--3 {
             background-image: linear-gradient(to right,
                 rgba($color-tertiary-light, .85),
@@ -124,7 +132,7 @@
     }
 
     &__price-box {
-        color:$color-white;
+        color: $color-white;
         margin-bottom: 8rem;
     }
 
@@ -144,5 +152,58 @@
 
     &:hover &__side--back {
         transform: rotateY(0);
+    }
+
+    @include respond(tab-port) {
+        height: auto;
+        background-color: $color-white;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        // FRONT SIDE FUNCTIONALITY
+        &__side {
+            height: auto;
+            position: relative;
+            box-shadow: none;
+
+            &--back {
+                transform: rotateY(0);
+
+                @include respond(tab-port) {
+                    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+                }
+            }
+        }
+
+        &__details {
+            padding: 1rem;
+        }
+
+        // BACK SIDE STYLING
+        &__cta {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+            width: 100%;
+            padding: 7rem 4rem 4rem 4rem;
+        }
+
+        &__price-box {
+            margin-bottom: 3rem;
+        }
+
+        &__price-value {
+            font-size: 6rem;
+            font-weight: 100;
+        }
+
+        &:hover &__side--front {
+            transform: rotateY(0);
+        }
+
+        &:hover &__side--back {
+            transform: rotateY(0);
+        }
     }
 }

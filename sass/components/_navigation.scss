@@ -20,6 +20,13 @@
         &:active {
             transform: translateY(.3rem);
         }
+
+        @include respond(tab-port) {
+            top: 3.5rem;
+            right: 3.5rem;
+        }
+
+        ;
     }
 
     &__background {
@@ -33,6 +40,12 @@
         z-index: 1000;
 
         transition: transform .8s;
+
+        @include respond(tab-port) {
+            top: 4.3rem;
+            right: 4.3rem;
+        }
+
         // transform: scale(130);
 
     }
@@ -106,7 +119,7 @@
             width: 4rem;
             height: 2px;
             background-color: $color-grey-dark-3;
-	        transition: top .2s	;
+            transition: top .2s;
         }
 
         &::before,
@@ -136,16 +149,17 @@
         top: 1.2rem;
     }
 
-    &__checkbox:checked + &__button &__icon {
-    	background:transparent;
+    &__checkbox:checked+&__button &__icon {
+        background: transparent;
     }
 
-    &__checkbox:checked + &__button &__icon::before {
-    	top:0;
-    	transform: rotate(135deg);
+    &__checkbox:checked+&__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
     }
-    &__checkbox:checked + &__button &__icon::after {
-    	top:0;
-    	transform: rotate(-135deg);
+
+    &__checkbox:checked+&__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
     }
 }
