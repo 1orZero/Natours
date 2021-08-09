@@ -10,6 +10,7 @@
 
     // "," comma means the OR
     @media (min-resolution: 192dpi) and (min-width: 600px),
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 600px),
         (min-width: 2000px) {
         background-image: linear-gradient(to right bottom,
             rgba($color-primary-light, 0.8),

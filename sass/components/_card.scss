@@ -15,6 +15,7 @@
         top: 0;
         left: 0;
         width: 100%;
+        -webkit-backface-visibility: hidden;
         backface-visibility: hidden; // ⭐️ IMPORTANT
 
         border-radius: 3px;
@@ -154,7 +155,8 @@
         transform: rotateY(0);
     }
 
-    @include respond(tab-port) {
+    @media only screen and (max-width: 56.25em),
+    only screen and (hover:none) {
         height: auto;
         background-color: $color-white;
         border-radius: 3px;
@@ -168,10 +170,7 @@
 
             &--back {
                 transform: rotateY(0);
-
-                @include respond(tab-port) {
-                    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-                }
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
             }
         }
 
